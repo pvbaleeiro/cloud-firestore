@@ -15,6 +15,7 @@
 		8572157A21853EF4000669EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8572157821853EF4000669EF /* LaunchScreen.storyboard */; };
 		8572158521853EF4000669EF /* cloud_firestoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572158421853EF4000669EF /* cloud_firestoreTests.swift */; };
 		8572159021853EF4000669EF /* cloud_firestoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572158F21853EF4000669EF /* cloud_firestoreUITests.swift */; };
+		8572159E2185426F000669EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8572159D2185426F000669EF /* GoogleService-Info.plist */; };
 		9057D4DFB138532E29F5ACF9 /* Pods_cloud_firestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F1DD48A7A8124C2C51DCDC /* Pods_cloud_firestore.framework */; };
 		DA535682EE48FAD98AC4C3C7 /* Pods_cloud_firestoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26740CD3A32F16EF101825C /* Pods_cloud_firestoreUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		8572158B21853EF4000669EF /* cloud-firestoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cloud-firestoreUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8572158F21853EF4000669EF /* cloud_firestoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cloud_firestoreUITests.swift; sourceTree = "<group>"; };
 		8572159121853EF4000669EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8572159D2185426F000669EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A26740CD3A32F16EF101825C /* Pods_cloud_firestoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cloud_firestoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56239EA3A7D8214AE1B103B /* Pods-cloud-firestoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloud-firestoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cloud-firestoreTests/Pods-cloud-firestoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D75472E64B6C927C6D970540 /* Pods-cloud-firestoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cloud-firestoreUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cloud-firestoreUITests/Pods-cloud-firestoreUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,12 +129,13 @@
 		8572156E21853EF3000669EF /* cloud-firestore */ = {
 			isa = PBXGroup;
 			children = (
-				8572156F21853EF3000669EF /* AppDelegate.swift */,
+				8572159F218542F8000669EF /* app-delegate */,
 				8572157121853EF3000669EF /* ViewController.swift */,
 				8572157321853EF3000669EF /* Main.storyboard */,
 				8572157621853EF4000669EF /* Assets.xcassets */,
 				8572157821853EF4000669EF /* LaunchScreen.storyboard */,
 				8572157B21853EF4000669EF /* Info.plist */,
+				8572159D2185426F000669EF /* GoogleService-Info.plist */,
 			);
 			path = "cloud-firestore";
 			sourceTree = "<group>";
@@ -153,6 +156,14 @@
 				8572159121853EF4000669EF /* Info.plist */,
 			);
 			path = "cloud-firestoreUITests";
+			sourceTree = "<group>";
+		};
+		8572159F218542F8000669EF /* app-delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8572156F21853EF3000669EF /* AppDelegate.swift */,
+			);
+			path = "app-delegate";
 			sourceTree = "<group>";
 		};
 		F6F8B0B8CEF83F50C93A126D /* Frameworks */ = {
@@ -176,6 +187,7 @@
 				8572156821853EF3000669EF /* Sources */,
 				8572156921853EF3000669EF /* Frameworks */,
 				8572156A21853EF3000669EF /* Resources */,
+				826ED26F73609F0B9659D207 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8572157A21853EF4000669EF /* LaunchScreen.storyboard in Resources */,
+				8572159E2185426F000669EF /* GoogleService-Info.plist in Resources */,
 				8572157721853EF4000669EF /* Assets.xcassets in Resources */,
 				8572157521853EF3000669EF /* Main.storyboard in Resources */,
 			);
@@ -337,6 +350,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		826ED26F73609F0B9659D207 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-cloud-firestore/Pods-cloud-firestore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cloud-firestore/Pods-cloud-firestore-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9365A2CB9DCC5AFF3B2B5D04 /* [CP] Check Pods Manifest.lock */ = {

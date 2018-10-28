@@ -6,6 +6,9 @@ target 'cloud-firestore' do
   use_frameworks!
 
   # Pods for cloud-firestore
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+
 
   target 'cloud-firestoreTests' do
     inherit! :search_paths
